@@ -15,6 +15,9 @@ use Illuminate\Http\Request;
 Route::post('login', 'UserController@login');
 Route::post('store', 'UserController@store');
 Route::post('storecategory','CategoryController@store');
+Route::post('index','CategoryController@index');
+Route::post('destroy','CategoryController@destroy');
+Route::post('updateCategory','CategoryController@updateCategory');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 

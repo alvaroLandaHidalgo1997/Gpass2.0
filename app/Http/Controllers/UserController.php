@@ -11,7 +11,7 @@ class UserController extends Controller
         public function login()
         {
         $key = $this->key;
-
+        
         if($_POST["email"] == null or $_POST["password"] == null or $_POST["email"] == "" or $_POST["password"] == "" )
         {
             return response()->json([
@@ -69,18 +69,6 @@ class UserController extends Controller
                 ]);
         }
         $users = User::where('email', $request->email)->first();
-
-        /*foreach ($user as $key => $value) 
-        {
-            if ($request->email == $value->email) 
-            {
-                return response()->json([
-                    'message' => 'El correo introducido ya está en uso'
-                ]);
-            }
-        }
-        */
-
         if (isset($_POST['email']) == true && empty($_POST['email']) == false)
         {
             $email = $_POST['email'];
